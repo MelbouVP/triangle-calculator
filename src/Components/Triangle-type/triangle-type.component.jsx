@@ -16,7 +16,10 @@ function TriangleType({ triangleSides, sendIsTriangleDrawable }) {
 
         let triangleIsDrawable = true;
 
-        if (sideA === sideC) {
+        if(sideA + sideB <= sideC){
+            setTriangleType('It is not possible to calculate this kind of triangle')
+            triangleIsDrawable = false
+        } else if (sideA === sideC) {
             setTriangleType('Triangle is equilateral')
         } else if (sideA < sideB && sideB < sideC){
             setTriangleType('Triangle is scalene')
