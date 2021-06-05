@@ -22,8 +22,9 @@ export class DataInput extends Component {
 
         // 1.Sanitze user input
         // handle cases when user input is text or 
-        // entered value is less than 1 (such triangle is not possible)
-        if(isNaN(value) || value < 1) return
+        // entered value is less than 1 (such triangle is not possible) 
+        // or more than 100 (limitation of functionality)
+        if(isNaN(value) || value < 1 || value > 100) return
         // round input number to whole numbers
         value = Math.ceil(value)
 
@@ -41,12 +42,13 @@ export class DataInput extends Component {
         e.preventDefault()
 
 
+        // Check if any of the values are empty before submitting
         for (const side in this.state.triangleSides) {
             if(this.state.triangleSides[side] === '') return
         }
 
         
-        console.log('submitting')
+        this.props.sendInputData(this.state.triangleSides)
 
         this.setState(() => ({
             triangleSides: {
@@ -62,8 +64,6 @@ export class DataInput extends Component {
     render() {
         const { sideA, sideB, sideC } = this.state.triangleSides
 
-        console.log(this.state.triangleSides)
-
         return (
             <div className="data-input">
 
@@ -73,7 +73,8 @@ export class DataInput extends Component {
                             <input 
                                 type='number'
                                 step='1' 
-                                // min='1'
+                                min='1'
+                                max='100'
                                 name="sideA" 
                                 id="sideA" 
                                 value={sideA} 
@@ -91,6 +92,7 @@ export class DataInput extends Component {
                                 type='number' 
                                 step='1'
                                 min='1'
+                                max='100'
                                 name="sideB" 
                                 id="sideB" 
                                 value={sideB} 
@@ -108,6 +110,7 @@ export class DataInput extends Component {
                                 type='number'
                                 step='1' 
                                 min='1'
+                                max='100'
                                 name="sideC" 
                                 id="sideC" 
                                 value={sideC} 

@@ -1,0 +1,13 @@
+
+.triangle-type {
+    display: flex;
+    justify-content: center;
+    height: 20%;
+
+    &__content {
+
+        h2 {
+            font-size: 1.5rem;
+        }
+    }
+}
