@@ -18,7 +18,10 @@ function TriangleType({ triangleSides, sendIsTriangleDrawable }) {
 
         if (sideA === sideC) {
             setTriangleType('Triangle is equilateral')
+        } else {
+            setTriangleType('Triangle is isoceles')
         }
+
         
         sendIsTriangleDrawable(triangleIsDrawable)
         window.scrollTo(0,0)
