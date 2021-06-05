@@ -1,0 +1,50 @@
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.app {
+  min-height: 100vh;
+
+    &__header {
+        height: 10vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            color: rgb(51, 136, 216);
+        }
+    }
+
+    &__output {
+        display: flex;
+        justify-content: center;
+        height: 420px;
+        width: 690px;
+        margin: 0 auto;
+
+        &--content {
+            width: 100%;
+            height: 100%;
+            background-size: 15px 15px;
+            background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 1px, transparent 0px), linear-gradient(rgba(0, 0, 0, 0.4) 1px, transparent 0px);
+        }
+
+
+    }
+
+    &__input {
+        height: 420px;
+        width: 690px;
+        margin: 0 auto;
+    }
+
+
+}
+
