@@ -3,7 +3,6 @@
 This application was developed as an assignment for javascript internship position.
 
 <br>
-<br>
 
 The main functionality of this app is:
 * Collecting user input for each side of triangle.
