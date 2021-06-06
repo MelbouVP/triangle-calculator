@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 
-
 import Drawing from './Components/Drawing/drawing.component'
 import TriangleType from './Components/Triangle-type/triangle-type.component'
 import DataInput from './Components/Data-input/data-input.component'
@@ -21,7 +20,6 @@ function App() {
   }
 
   const getInputData = (data) => {
-    console.log(data)
     setTriangleSides(data)
   }
 

@@ -4,8 +4,17 @@ import React, { useRef, useEffect, useCallback } from 'react'
 import './drawing.styles.scss'
 function Drawing({ isDrawable, triangleSides }) {
 
+
+    // 1. This component is responsible for drawing the triangle 
+    // based on received triangleSides prop from the parent - App
+    // 2. Triangles that are invalid do not get drawn
+
+
+    // Canvas ref is responsible for remembering triangle drawing between component rerenders
     const canvasRef = useRef(null)
 
+
+    // Determine scale of image in regards to provided length of triangle sides
     const determineFactor = useCallback((sideC) => {
         
         if(sideC < 5) return 120

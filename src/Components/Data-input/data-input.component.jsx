@@ -4,6 +4,12 @@ import './data-input.component.scss'
 
 function DataInput({ sendInputData }) {
 
+    // 1. This component is responsible for collecting user input - 
+    // length of each side of the triangle
+    // and handling cases when input data is not in acceptable data type, i.e., string
+    // 2. Received data input is passed to parent component - App
+
+
     const [triangleSides, setTriangleSides] = useState({
         sideA: '',
         sideB: '',
@@ -15,11 +21,12 @@ function DataInput({ sendInputData }) {
         let { name, value } = e.target
 
         // 1.Sanitze user input
-        // handle cases when user input is text or 
+        // Handle cases when user input is text or 
         // entered value is less than 1 (such triangle is not possible) 
         // or more than 100 (limitation of functionality)
         if(isNaN(value) || value < 1 || value > 100) return
-        // round input number to whole numbers
+        
+        // Round input number to whole numbers
         value = Math.ceil(value)
 
 		
@@ -50,8 +57,6 @@ function DataInput({ sendInputData }) {
     }
 
     const { sideA, sideB, sideC } = triangleSides
-
-    console.log(triangleSides)
 
     return (
         <div className="data-input">

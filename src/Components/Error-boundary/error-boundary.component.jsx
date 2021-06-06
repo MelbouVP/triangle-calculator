@@ -9,7 +9,7 @@ class ErrorBoundary extends React.Component {
     }
 
 
-    // Errorboundary component is responsible for encountered errors and displaying 404 page
+    // 1. Errorboundary component is responsible for encountered errors and displaying 404 page
   
     // If error is caught
     static getDerivedStateFromError(error) {

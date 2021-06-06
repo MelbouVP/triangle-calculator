@@ -5,6 +5,10 @@ import './triangle-type.styles.scss'
 function TriangleType({ triangleSides, sendIsTriangleDrawable }) {
 
 
+    // 1. This component is responsible for calculating the type of triangle
+    // based on provided user input that is received from parent component - App
+    // 2. Determining whether or not the triangle be drawn based calculated triangle type
+
 
     const [triangleType, setTriangleType] = useState('')
 
@@ -16,12 +20,14 @@ function TriangleType({ triangleSides, sendIsTriangleDrawable }) {
 
         let triangleIsDrawable = true;
 
+
         if(sideA + sideB <= sideC){
             setTriangleType('It is not possible to calculate this kind of triangle')
             triangleIsDrawable = false
         } else if (sideA === sideC) {
             setTriangleType('Triangle is equilateral')
         } else if (sideA < sideB && sideB < sideC){
+            console.log(sideA < sideB && sideB < sideC)
             setTriangleType('Triangle is scalene')
         } else {
             setTriangleType('Triangle is isoceles')
@@ -33,6 +39,9 @@ function TriangleType({ triangleSides, sendIsTriangleDrawable }) {
 
     },[setTriangleType, sendIsTriangleDrawable])
    
+
+
+    // Run triangle calculations every time props change
     useEffect(() => {
         setTriangleType('')
         if(!triangleSides) return
