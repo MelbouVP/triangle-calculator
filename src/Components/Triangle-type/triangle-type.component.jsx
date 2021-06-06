@@ -27,7 +27,6 @@ function TriangleType({ triangleSides, sendIsTriangleDrawable }) {
         } else if (sideA === sideC) {
             setTriangleType('Triangle is equilateral')
         } else if (sideA < sideB && sideB < sideC){
-            console.log(sideA < sideB && sideB < sideC)
             setTriangleType('Triangle is scalene')
         } else {
             setTriangleType('Triangle is isoceles')
